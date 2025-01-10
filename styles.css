@@ -111,6 +111,7 @@ body {
 
 .cart-button {
   position: relative;
+  color:#ff9f00;
   animation: glow 1.5s infinite alternate;
 }
 
