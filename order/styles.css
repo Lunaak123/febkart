@@ -1,0 +1,189 @@
+/* General Styles */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f9f3f3; /* Soft pastel background */
+    text-align: center;
+}
+
+h3 {
+    font-size: 20px;
+    width: 300px;
+    position: fixed;
+    margin-bottom: 300px;
+    color: #ff69b4; /* Pinkish text color for a warm feel */
+    transition: opacity 1s ease-in-out;
+}
+
+.image-container {
+    position: relative;
+    width: 80%;
+    max-width: 300px;
+}
+
+img {
+    width: 100%;
+    max-width: 200px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Animation Effects */
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-10px);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+    75% {
+        transform: translateX(-10px);
+    }
+    100% {
+        transform: translateX(10px);
+    }
+}
+
+@keyframes flash {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0;
+        transform: scale(1.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes moveDown {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+.flash {
+    animation: flash 1s ease-in-out;
+}
+
+.transition-image {
+    display: none;
+    width: 100%;
+    max-width: 200px;
+    animation: moveDown 1s ease-out;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.heart-image {
+    display: none;
+    width: 300px;
+    margin-top: 20px;
+}
+
+/* Beating effect for the heart image */
+@keyframes beat {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.heart-image {
+    display: none;
+    width: 300px;
+    margin-top: 20px;
+    animation: beat 1s ease-in-out infinite;
+}
+
+/* Vibrant Heart Shower */
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    background-color: #fff0f5; /* Light lavender background for freshness */
+}
+
+#heart-shower {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.heart {
+    position: absolute;
+    font-size: 24px;
+    color: #ff1493; /* Deep pink heart color */
+    opacity: 0;
+    animation: fall 4s linear infinite, fadeInOut 4s ease-in-out infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100px);
+    }
+    100% {
+        transform: translateY(calc(100vh + 100px));
+    }
+}
+
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Adding random color variation to hearts */
+.heart:nth-child(odd) {
+    color: #ff6347; /* Tomato red */
+}
+
+.heart:nth-child(even) {
+    color: #ff4500; /* Orange red */
+}
+
+@media (max-width: 600px) {
+    h3 {
+        font-size: 16px;
+        color: #ff1493; /* Maintaining the pinkish theme */
+    }
+    .image-container {
+        width: 90%;
+    }
+    img {
+        width: 80%;
+    }
+}
